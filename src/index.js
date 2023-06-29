@@ -1,17 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react"
+import ReactDOM from "react-dom"
+import "./index.css"
+import App from "./App"
+import reportWebVitals from "./reportWebVitals"
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+ReactDOM.render(
+  <>
+    <div
+      className="bg-gradient-to-r from-blue-400 via-blue-500 to-indigo-500"
+      id="background"
+    >
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </div>
+    <div id="root"></div>
+  </>,
+  document.getElementById("root")
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Apply the background style to the body element
+document.body.style.background = "none"
+document.getElementById("background").style.position = "fixed"
+document.getElementById("background").style.width = "100%"
+document.getElementById("background").style.height = "100%"
+document.getElementById("background").style.top = "0"
+document.getElementById("background").style.left = "0"
+document.getElementById("background").style.zIndex = "-1"
+
+reportWebVitals()
