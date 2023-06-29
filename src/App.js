@@ -22,6 +22,7 @@ function App() {
   }
 
   async function connectMetaMask() {
+    if (!isMetamaskAvailable) console.log("Make sure you have metamask!")
     try {
       await window.ethereum.enable()
 
@@ -40,7 +41,7 @@ function App() {
   useEffect(() => {
     const checkMetamask = () => {
       const connected = checkIfMetamaskAvailable()
-      setIsConnected(connected)
+      setIsMetamaskAvailable(connected)
     }
     checkMetamask()
   }, [])
