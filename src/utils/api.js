@@ -5,13 +5,16 @@ export const UploadMetamaskUtil = async (userMailid, walletAddress) => {
   }
   console.log(data)
 
-  const req = await fetch("http://13.234.122.138:3000/metamask-wallet/create", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
+  const req = await fetch(
+    "https://13-233-194-124.nip.io/metamask-wallet/create",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }
+  )
 
   console.log("Upload metamask account", req)
 
